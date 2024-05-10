@@ -1,4 +1,5 @@
 import { Spritesheet, Assets,  Texture } from "pixi.js";
+import { atlasPatch } from "../../../main";
 
 export class AssetsFactory {
   
@@ -6,8 +7,8 @@ export class AssetsFactory {
   
   constructor() {
     this.spritesheet = new Spritesheet(
-      Texture.from('../assets/atlas.png'),
-      Assets.cache.get('../assets/atlas.json').data,
+      Texture.from(atlasPatch.png),
+      Assets.cache.get(atlasPatch.json).data,
     );
     this.spritesheet.parse();
   }

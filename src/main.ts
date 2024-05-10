@@ -2,11 +2,12 @@ import { Application, Assets, type ApplicationOptions } from "pixi.js";
 import { Game } from "./widgets/Game/Game";
 import { AssetsFactory } from "./widgets/hared/assets-factory/AssetsFactory";
 
-const initConfig: Partial<ApplicationOptions> | undefined = {
-  width: 1024,
-  height: 768,
-  hello: true,
-  autoStart: true,
+const main = async () => {
+  const initConfig: Partial<ApplicationOptions> | undefined = {
+    width: 1024,
+    height: 768,
+    hello: true,
+    autoStart: true,
 };
 const pixiApp = new Application();
 
@@ -27,3 +28,6 @@ document.addEventListener('keydown', (key: KeyboardEvent) => game.keyboardProces
 document.addEventListener('keyup', (key: KeyboardEvent) => game.keyboardProcessor.onKeyUp(key));
 
 pixiApp.ticker.add(game.update, game);
+}
+
+main();
